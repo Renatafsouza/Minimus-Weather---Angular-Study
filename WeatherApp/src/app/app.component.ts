@@ -6,15 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'WeatherApp';
-  showMenu = true;
   darkModeActive = false;
 
-  toggleMenu() {
-    console.log("toggle")
-  }
+  constructor() { }
 
-  modeToggleSwitch() {
-    console.log("mode toggle switch")
+  modeToggleEvent(isDarkMode: boolean) {
+    this.darkModeActive = isDarkMode;
   }
 }
