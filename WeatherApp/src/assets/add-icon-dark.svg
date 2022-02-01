@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="209.136" height="209.136" viewBox="0 0 209.136 209.136">
+  <defs>
+    <filter id="Ellipse_7" x="0" y="0" width="209.136" height="209.136" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#333" flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#faa"/>
+      <stop offset="1" stop-color="#fff99d"/>
+    </linearGradient>
+  </defs>
+  <g id="Component_3_1" data-name="Component 3 – 1" transform="translate(9 6)">
+    <g id="Plus_Icon" data-name="Plus Icon" transform="translate(-1463.432 -332.432)">
+      <g transform="matrix(1, 0, 0, 1, 1454.43, 326.43)" filter="url(#Ellipse_7)">
+        <circle id="Ellipse_7-2" data-name="Ellipse 7" cx="95.568" cy="95.568" r="95.568" transform="translate(9 6)" fill="#39518a"/>
+      </g>
+      <rect id="Rectangle_3" data-name="Rectangle 3" width="12.849" height="142.95" rx="5" transform="translate(1552.575 358.131)" fill="url(#linear-gradient)"/>
+      <rect id="Rectangle_4" data-name="Rectangle 4" width="12.849" height="142.95" rx="5" transform="translate(1630.475 423.181) rotate(90)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

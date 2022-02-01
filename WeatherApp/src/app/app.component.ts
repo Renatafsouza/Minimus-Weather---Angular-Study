@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UiService } from './services/ui.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   darkModeActive = false;
 
-  constructor() { }
+  constructor(private ui: UiService) { }
 
   modeToggleEvent(isDarkMode: boolean) {
     this.darkModeActive = isDarkMode;
+    this.ui.darkModeState.next(this.darkModeActive);
   }
 }

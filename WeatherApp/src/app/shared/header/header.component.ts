@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-header',
@@ -7,22 +8,22 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title = 'WeatherApp';
-  showMenu = true;
+  showMenu = false;
   darkModeActive = false;
   @Output() themeModeEvent = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private uiService: UiService) { }
 
   ngOnInit(): void {
   }
 
   toggleMenu() {
-    console.log("toggle")
     this.showMenu = !this.showMenu;
+    this.uiService.menuState.next(this.showMenu);
   }
 
   modeToggleSwitch(value: boolean) {
+    this.darkModeActive = !this.darkModeActive;
     this.themeModeEvent.emit(value);
   }
-
 }

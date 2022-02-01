@@ -1,12 +1,21 @@
 
-  
+  .root__container {
+    /* left: 0;
+    top: 0;   */
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 0.5fr auto;
+    position: relative;
+  }
   
   /*
   ================
       Body
   ================
   */
-  
+ 
   .main-container__bg {
     height: 100%;
     width: 100%;

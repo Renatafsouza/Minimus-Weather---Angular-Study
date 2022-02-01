@@ -1,17 +1,22 @@
 <div>
-    <app-header (themeModeEvent)="modeToggleEvent($event)"></app-header>
+    <app-menu></app-menu>
+    <div class="root__container">
+        <app-header (themeModeEvent)="modeToggleEvent($event)"></app-header>
+    
+          <!-- Main Content -->
+      
+          <!--<router-outlet></router-outlet>-->
+          <main class="main__container">
+              <div class="main-container__bg" [ngClass]="{'main-container__bg-dark': darkModeActive}"></div>
+              <router-outlet></router-outlet>
+          </main>
+      
+          <!-- Footer -->
+      
+          <footer class="main__footer">
+              <small class="copyright__text">Copyright © 2018 Minimus</small>
+          </footer>
+      </div>
 
-      <!-- Main Content -->
-  
-      <!--<router-outlet></router-outlet>-->
-      <main class="main__container">
-          <div class="main-container__bg" [ngClass]="{'main-container__bg-dark': darkModeActive}"></div>
-          <router-outlet></router-outlet>
-      </main>
-  
-      <!-- Footer -->
-  
-      <footer class="main__footer">
-          <small class="copyright__text">Copyright © 2018 Minimus</small>
-      </footer>
-  </div>
+</div>
+
