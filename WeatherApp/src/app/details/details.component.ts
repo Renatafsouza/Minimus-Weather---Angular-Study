@@ -16,7 +16,8 @@ export class DetailsComponent implements OnInit, OnDestroy {
   temp: number = 0;
   hum: number = 0;
   wind: number = 0;
-
+  tweeties = [];
+  
   today: string = '';
 
   day1Name: string = '';

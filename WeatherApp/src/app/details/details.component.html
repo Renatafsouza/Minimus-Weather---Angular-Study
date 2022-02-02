@@ -887,21 +887,8 @@
                 stroke-width="2" d="M1260 923c-13-1-24-1-43 6s-34 2-43 0-27-6-39-6" opacity=".13"/>
         </svg>
   
-        <svg *ngSwitchDefault viewBox="4302 163 1218 406">
-          <defs>
-            <style>.aa {
-              opacity: 0.6;
-              fill: url(#aa);
-            }</style>
-            <linearGradient id="aa" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-              <stop offset="0" stop-color="#000075"/>
-              <stop offset="1" stop-color="#ff8c8c"/>
-            </linearGradient>
-          </defs>
-          <path class="aa" d="M20,0H1198a20,20,0,0,1,20,20V406a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V20A20,20,0,0,1,20,0Z"
-                transform="translate(4302 163)"/>
-        </svg>
-  
+        <img src="assets/cities/default.svg" *ngSwitchDefault class="city__illustration">      
+        
         <div class="header-content__wrapper">
   
           <div class="today-weather__container">
@@ -935,6 +922,7 @@
       </section>
   
       <main class="body-content__wrapper">
+        
         <section class="twitter-feed__container">
           <div class="twitter-feed__header">
             <svg class="twitter__icon" viewBox="4332 625.812 30 24.375">
@@ -951,6 +939,9 @@
             <span class="twitter-feed-tag__text">#{{city}}</span>
           </div>
           <div class="twitter-feed__body">
+            <div class="twitter-no-tweets__text" *ngIf="tweeties.length == 0">
+              <p>No Tweets Found</p>
+            </div>
             <!--TODO: retrieve tweets from twitter API-->
           </div>
         </section>
