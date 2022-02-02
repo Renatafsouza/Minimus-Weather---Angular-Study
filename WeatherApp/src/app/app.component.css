@@ -1,9 +1,7 @@
 
   .root__container {
-    /* left: 0;
-    top: 0;   */
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 0.5fr auto;
@@ -15,17 +13,27 @@
       Body
   ================
   */
+
+  .main__container {
+    background: linear-gradient(to top,#5ee7df 0,#66a6ff 100%);
+  }
+
+  .main__container-dark {
+    opacity: 1;
+    background: linear-gradient(to bottom, #B290FF, #2E1D65);
+    transition: opacity 300ms linear;
+  }
  
   .main-container__bg {
-    height: 100%;
-    width: 100%;
+    min-height: 100vh;
+    width: 100vw;
     position: absolute;
     top: 0;
     left: 0;
     z-index: -2;
     opacity: 0;
-    background: white;
     transition: opacity 300ms linear;
+    background: linear-gradient(to top,#5ee7df 0,#66a6ff 100%);
   }
   
   .main-container__bg-dark {

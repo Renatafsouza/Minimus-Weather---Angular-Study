@@ -6,7 +6,7 @@
           <!-- Main Content -->
       
           <!--<router-outlet></router-outlet>-->
-          <main class="main__container">
+          <main class="main__container" [ngClass]="{'main__container-dark': darkModeActive}">
               <div class="main-container__bg" [ngClass]="{'main-container__bg-dark': darkModeActive}"></div>
               <router-outlet></router-outlet>
           </main>
