@@ -133,4 +133,33 @@
   .profile__image {
     max-width: 4rem;
   }
+
+  .menu-link {
+    outline: 0;
+    font-size: 1rem;
+    padding: 1rem 0;
+    margin: .5rem 0;
+    cursor: pointer;
+}
+
+.menu-links {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-flow: column;
+  list-style: none;
+}
+
+.link-active {
+  color: #495cfc;
+  border-bottom: 1px solid #495cfc;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+
   
