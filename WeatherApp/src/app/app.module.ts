@@ -11,6 +11,9 @@ import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { AddCardComponent } from './add-card/add-card.component';
 import { DetailsComponent } from './details/details.component';
 import { MenuComponent } from './shared/menu/menu.component';
+import { AddComponent } from './add/add.component';
+import { FormsModule } from '@angular/forms';
+import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,15 @@ import { MenuComponent } from './shared/menu/menu.component';
     AddCardComponent,
     DetailsComponent,
     MenuComponent,
+    AddComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule 
+    HttpClientModule,
+    FormsModule,
+    NguiAutoCompleteModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
