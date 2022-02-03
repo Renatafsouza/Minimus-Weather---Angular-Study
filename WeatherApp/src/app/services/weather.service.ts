@@ -1,14 +1,44 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { first, map, Observable, Subject } from 'rxjs';
 import { Weather } from '../models/Weather.model';
+import { environment } from 'src/environments/environment';
+
+export interface WeatherList {
+  List: Weather[]
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
-
+  private readonly baseURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
+  private readonly forcastURL = 'https://api.openweathermap.org/data/2.5/forecast?q=';
+  private readonly appID = environment.appID;
+  
   constructor(private http: HttpClient) { }
+
+/** 
+ * Implementing using RxJS operators pipe, first, map
+ */
+
+  getWeather$(city: string, metric: 'metric' | 'imperial' = 'metric'): Observable<any> {
+    return this.http.get<Weather>(
+      `${this.baseURL}${city}&units=${metric}&APPID=${this.appID}`).pipe((first(), map(data => { 
+        // console.log("Weather response"); 
+        // console.log(data)
+      })));
+  }
+
+  getForecast$(city: string, metric: 'metric' | 'imperial' = 'metric'): Observable<any> {
+    return this.http.get<WeatherList>(
+      `${this.forcastURL}${city}&units=${metric}&APPID=${this.appID}`)
+      .pipe(first(), map((weather) => weather['List']));
+  }
+
+ /*
+  Implementing with Subject
+ */ 
   
   getCityWeatherByName(city: string, metric: string) {
     const dataSub = new Subject();
@@ -16,9 +46,6 @@ export class WeatherService {
     this.http.get<Weather>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${metric}&APPID=517c5053a8d35544f0d4c91fdacf09ab`)
               .subscribe((data) => {
                 dataSub.next(data['weather']);
-              }, 
-              (err) => {
-                console.log(err);
               });
 
     return dataSub;          
