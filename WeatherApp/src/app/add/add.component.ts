@@ -26,9 +26,9 @@ export class AddComponent implements OnInit {
   ngOnInit() {
     // getting the city placeID data info to right side of the screen
     this.weather.getWeather$(this.city).subscribe((payload) => {
-      this.temp = payload.main.temp;
       console.log("main")
-      console.log(payload.weather[0])
+      console.log(payload)
+      this.temp = payload.main.temp;
       this.state = payload.weather[0].main;
     });
 
@@ -37,13 +37,14 @@ export class AddComponent implements OnInit {
       this.capitals = payload;
     });
 
-    this.sub1 = this.fb.getCities$().subscribe((cities) => {
-      Object.values(cities).forEach((city: any) => {
-        if (city.name === 'Paris') {
-          this.followedCM = true;
-        }
-      });
-    });
+    // this.sub1 = this.fb.getCities$().subscribe((cities) => {
+    //   Object.values(cities).forEach((city: any) => {
+    //     if (city.name === 'Paris') {
+    //       this.followedCM = true;
+    //     }
+    //   });
+    // });
+
   }
 
   selectCity(value: string) {

@@ -108,3 +108,13 @@ img {
   .weather-icon__container > svg {
     width: 10rem;
   }
+
+  .add-city-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #003EFF;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 2rem;
+    font-size: 1rem;
+  }

@@ -5,7 +5,7 @@ import { Weather } from '../models/Weather.model';
 import { environment } from 'src/environments/environment';
 
 export interface WeatherList {
-  List: Weather[]
+  list: Weather[]
 }
 
 @Injectable({
@@ -24,16 +24,13 @@ export class WeatherService {
 
   getWeather$(city: string, metric: 'metric' | 'imperial' = 'metric'): Observable<any> {
     return this.http.get<Weather>(
-      `${this.baseURL}${city}&units=${metric}&APPID=${this.appID}`).pipe((first(), map(data => { 
-        // console.log("Weather response"); 
-        // console.log(data)
-      })));
+      `${this.baseURL}${city}&units=${metric}&APPID=${this.appID}`).pipe((first()));
   }
 
   getForecast$(city: string, metric: 'metric' | 'imperial' = 'metric'): Observable<any> {
     return this.http.get<WeatherList>(
       `${this.forcastURL}${city}&units=${metric}&APPID=${this.appID}`)
-      .pipe(first(), map((weather) => weather['List']));
+      .pipe(first(), map((weather) => weather['list']));
   }
 
  /*

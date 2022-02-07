@@ -1,6 +1,7 @@
 <div class="home__container">
 
-    <app-weather-card></app-weather-card>
+    <app-weather-card *ngFor="let city of cities;" [addMode]="false" [city]="city.name"></app-weather-card>
+    <!-- <app-weather-card ></app-weather-card> -->
     <app-add-card></app-add-card>
   
 </div>

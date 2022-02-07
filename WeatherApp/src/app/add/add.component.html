@@ -14,6 +14,7 @@
                    auto-complete [(ngModel)]="selectedCity"
                    (keyup.enter)="selectCity(input.value)"
                    (ngModelChange)="selectCity(input.value)"
+                   [source] = "capitals"
                     #input/>
                     <!-- [source]="capitals" [max-num-list]="5" [close-on-focusout]="false" -->
             <button class="search-city-btn" (click)="selectCity(input.value)">
@@ -105,7 +106,7 @@
   
             <div class="fav-city-info">
               <span class="fav-city-temp">{{temp}}°</span>
-              <div class="fav-city-name-wrapper"><span class="fav-city-name">ROME</span><span
+              <div class="fav-city-name-wrapper"><span class="fav-city-name">Paris</span><span
                 class="fav-city-country">IT</span></div>
               <span class="fav-city-state">{{state}}</span>
             </div>

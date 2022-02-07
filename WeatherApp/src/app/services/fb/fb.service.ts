@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { first, switchMap } from 'rxjs';
+import { map, switchMap } from 'rxjs';
 
-export interface CityName {
-  name: string
+export class CityName {
+  constructor(public name: string) {}
 }
 
 @Injectable({
@@ -16,8 +16,8 @@ export class FbService {
 
     return this.http.post(
       'https://minimus-49e69-default-rtdb.firebaseio.com/cities.json',
-      name
-    ).subscribe(response => console.log(response));
+      {name: name}
+    );
 
     // return this.auth.uid()
     //   .pipe(switchMap((uid) => {
@@ -31,7 +31,9 @@ export class FbService {
     return this.http.get<CityName[]>(
       'https://minimus-49e69-default-rtdb.firebaseio.com/cities.json'
     ).pipe(
-      switchMap(data => {
+      map(data => {
+        console.log("getCities")
+        console.log(data)
         return data;
     }));
      
